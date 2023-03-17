@@ -1,8 +1,8 @@
 public class Person {
-    String name;
-    String surname;
-    String address;
-    String phoneNumber;
+    private String name;
+    private String surname;
+    private String address;
+    private String phoneNumber;
 
     Person(String name1, String surname1, String address1, String phoneNumber1) {
         name = setName(name1);
