@@ -28,7 +28,7 @@ public class Person {
         }
         return surname;
     }
-   private  String setPhoneNumber(String phoneNumber){
+     String setPhoneNumber(String phoneNumber){
        char first = phoneNumber.charAt(0);
        if (first != '0'){
            System.exit(1);
@@ -36,5 +36,21 @@ public class Person {
            this.phoneNumber = phoneNumber;
        }
        return phoneNumber;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 }

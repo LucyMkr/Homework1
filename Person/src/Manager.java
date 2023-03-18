@@ -6,12 +6,16 @@ public class Manager extends Employee {
         this.department = setDepartment(department1);
     }
 
-    private String setDepartment(String department) {
+     private String setDepartment(String department) {
         if (department.equals("production")) {
             this.department = department;
         } else {
             System.exit(1);
         }
+        return department;
+    }
+
+    public String getDepartment() {
         return department;
     }
 }

@@ -25,5 +25,12 @@ public class Employee extends Person {
         return salary;
     }
 
+    @Override
+    public String getPhoneNumber() {
+        return super.getPhoneNumber();
+    }
 
+    public int getSalary() {
+        return salary;
+    }
 }
