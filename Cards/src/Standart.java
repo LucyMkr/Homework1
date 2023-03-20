@@ -63,7 +63,7 @@ public class Standart {
     }
 
     protected int getMoney(int takenMoney) {
-        if (takenMoney <= sum) {
+        if (takenMoney <= sum && takenMoney > 0) {
             sum = sum - takenMoney;
         }
         else {

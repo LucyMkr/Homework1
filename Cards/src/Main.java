@@ -12,6 +12,6 @@ public class Main {
         System.out.println(card2.getLunchSum());
         card2.lunchMoney(15000);
         System.out.println(card2.getLunchSum());
-
+        Gold card4 = new Gold("1547 3584 5415 1546", "5752", "154", 100);
     }
 }
