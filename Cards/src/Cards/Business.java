@@ -1,0 +1,32 @@
+package Cards;
+
+public class Business extends Standard {
+    private boolean isNotDone = true;
+
+    public Business(String number1, String pin1, String cvv1, int sum1) {
+        super(number1, pin1, cvv1, sum1);
+
+    }
+
+    public void duty() {
+        if (isNotDone) {
+            isNotDone = false;
+            sum += 1000000;
+        } else {
+            System.out.println("You cannot add more money");
+            System.exit(6);
+        }
+    }
+
+    @Override
+    public int onlinePurchase(int takenMoney) {
+        takenMoney = (int) (takenMoney * 0.9);
+        if (takenMoney <= sum && takenMoney > 0) {
+            sum = sum - takenMoney;
+        } else {
+            System.out.println("You do not have enough money");
+            System.exit(8);
+        }
+        return sum;
+    }
+}

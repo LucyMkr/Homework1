@@ -1,21 +1,29 @@
 public class Main {
     public static void main(String[] args) {
-        Standart card1 = new Standart("1547 3584 5415 1546", "1547", "541", 150000);
+        Cards.Standard card1 = new Cards.Standard("1547 3584 5415 1546", "1547", "541", 150000);
         card1.inMoney(10000);
         System.out.println(card1.getSum());
         card1.getMoney(15000);
         System.out.println(card1.getSum());
-        Gold card2 = new Gold("1547 3584 5415 1546", "1547", "541", 1000000);
-        System.out.println(card2.getLunchSum());
-        card2.lunchMoney(15000);
-        System.out.println(card2.getLunchSum());
-        Gold card4 = new Gold("1547 3584 5415 1546", "5752", "154", 100);
-        System.out.println("problem of one million starts");
-        Business card = new Business("1547 3584 5415 1546", "1547", "541", 150000);
-        card.duty();
-        System.out.println(card.getSum1());
-        card.duty();
-        System.out.println(card.getSum1());
+        card1.onlinePurchase(1000);
+        System.out.println(card1.getSum());
+        System.out.println("work with standard cards is finished");
 
+
+        Cards.Business card2 = new Cards.Business("1547 3584 5415 1546", "1547", "541", 1000);
+        card2.duty();
+        System.out.println(card2.getSum());
+        card2.onlinePurchase(1000);
+        System.out.println(card2.getSum());
+        System.out.println("work with business cards is finished");
+
+
+        Cards.Gold card3 = new Cards.Gold("1547 3584 5415 1545", "1547", "541", 1000000);
+        System.out.println(card3.getLunchSum());
+        card3.lunchMoney(15000);
+        System.out.println(card3.getLunchSum());
+        card3.getMoney(1500);
+        System.out.println(card3.getBonus());
+        System.out.println("work with gold cards is finished");
     }
 }

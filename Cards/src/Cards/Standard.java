@@ -1,10 +1,12 @@
-public class Standart {
+package Cards;
+
+public class Standard {
     private String number;
     private String pin;
     private String cvv;
-    private int sum;
+    protected int sum;
 
-    Standart(String number1, String pin1, String cvv1, int sum1) {
+    public Standard(String number1, String pin1, String cvv1, int sum1) {
         number = setNumber(number1);
         pin = setPin(pin1);
         cvv = setCvv(cvv1);
@@ -15,6 +17,7 @@ public class Standart {
         if (number.length() == 19) {
             this.number = number;
         } else {
+            System.out.println("Wrong data input");
             System.exit(1);
         }
         return number;
@@ -24,6 +27,7 @@ public class Standart {
         if (pin.length() == 4) {
             this.pin = pin;
         } else {
+            System.out.println("Wrong data input");
             System.exit(2);
         }
         return pin;
@@ -33,6 +37,7 @@ public class Standart {
         if (cvv.length() == 3) {
             this.cvv = cvv;
         } else {
+            System.out.println("Wrong data input");
             System.exit(3);
         }
         return cvv;
@@ -42,41 +47,54 @@ public class Standart {
         if (sum >= 0 && sum <= 10000000) {
             this.sum = sum;
         } else {
+            System.out.println("Wrong data input");
             System.exit(4);
         }
         return sum;
     }
-    protected String getNumber() {
+
+    public String getNumber() {
         return number;
     }
 
-    protected String getPin() {
+    public String getPin() {
         return pin;
     }
 
-    protected String getCvv() {
+    public String getCvv() {
         return cvv;
     }
 
-    protected int getSum() {
+    public int getSum() {
         return sum;
     }
 
-    protected int getMoney(int takenMoney) {
+    public int getMoney(int takenMoney) {
         if (takenMoney <= sum && takenMoney > 0) {
             sum = sum - takenMoney;
-        }
-        else {
+        } else {
+            System.out.println("You do not have enough money");
             System.exit(5);
         }
         return sum;
     }
 
-    protected int inMoney(int inputMoney) {
-        if (inputMoney > 0 && inputMoney + sum <= 10000000 ){
+    public int inMoney(int inputMoney) {
+        if (inputMoney > 0 && inputMoney + sum <= 10000000) {
             sum = sum + inputMoney;
-        }else {
+        } else {
+            System.out.println("You cross you limit of your card");
             System.exit(6);
+        }
+        return sum;
+    }
+
+    public int onlinePurchase(int takenMoney) {
+        if (takenMoney <= sum && takenMoney > 0) {
+            sum = sum - takenMoney;
+        } else {
+            System.out.println("You do not have enough money");
+            System.exit(8);
         }
         return sum;
     }
