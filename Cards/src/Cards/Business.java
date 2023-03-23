@@ -3,9 +3,14 @@ package Cards;
 public class Business extends Standard {
     private boolean isNotDone = true;
 
-    public Business(String number1, String pin1, String cvv1, int sum1) {
-        super(number1, pin1, cvv1, sum1);
+    public Business(String number1, String pin1, String cvv1, int sum1, String name1, String surname1, int expirationYear1) {
+        super(number1, pin1, cvv1, sum1, name1, surname1, expirationYear1);
 
+    }
+
+    @Override
+    public String getType() {
+        return "Business";
     }
 
     public void duty() {
@@ -28,5 +33,11 @@ public class Business extends Standard {
             System.exit(8);
         }
         return sum;
+    }
+    public void getInfo(){
+        System.out.println(getName());
+        System.out.println(getSurname());
+        System.out.println(getExpirationYear());
+        System.out.println(getType());
     }
 }

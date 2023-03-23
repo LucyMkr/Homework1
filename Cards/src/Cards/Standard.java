@@ -5,12 +5,19 @@ public class Standard {
     private String pin;
     private String cvv;
     protected int sum;
+    private String name;
+    private String surname;
+    private int expirationYear;
+    private String type = "Standard";
 
-    public Standard(String number1, String pin1, String cvv1, int sum1) {
+    public Standard(String number1, String pin1, String cvv1, int sum1, String name1, String surname1, int expirationYear1) {
         number = setNumber(number1);
         pin = setPin(pin1);
         cvv = setCvv(cvv1);
         sum = setSum(sum1);
+        name = setName(name1);
+        surname = setSurname(surname1);
+        expirationYear = setExpirationYear(expirationYear1);
     }
 
     private String setNumber(String number) {
@@ -53,6 +60,29 @@ public class Standard {
         return sum;
     }
 
+    public String setName(String name) {
+        if (name.length() > 2) {
+            this.name = name;
+        } else {
+            System.exit(10);
+        }
+        return name;
+    }
+
+    public String setSurname(String surname) {
+        this.surname = surname;
+        return  surname;
+    }
+
+    public int setExpirationYear(int expirationYear) {
+        if (expirationYear >= 2000 && expirationYear <= 2060)
+            this.expirationYear = expirationYear;
+        else {
+            System.exit(11);
+        }
+        return expirationYear;
+    }
+
     public String getNumber() {
         return number;
     }
@@ -67,6 +97,22 @@ public class Standard {
 
     public int getSum() {
         return sum;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public int getExpirationYear() {
+        return expirationYear;
+    }
+
+    public String getType() {
+        return type;
     }
 
     public int getMoney(int takenMoney) {
