@@ -34,10 +34,9 @@ public class Business extends Standard {
         }
         return sum;
     }
-    public void getInfo(){
-        System.out.println(getName());
-        System.out.println(getSurname());
-        System.out.println(getExpirationYear());
-        System.out.println(getType());
+    @Override
+    public String toString() {
+        String info = getName() + '\n' + getSurname() + '\n' + getExpirationYear() + '\n' + getType() ;
+        return info;
     }
 }

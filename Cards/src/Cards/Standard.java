@@ -19,6 +19,12 @@ public class Standard {
         surname = setSurname(surname1);
         expirationYear = setExpirationYear(expirationYear1);
     }
+    public Standard(){
+        System.out.println(getName());
+        System.out.println(getSurname());
+        System.out.println(getExpirationYear());
+        System.out.println(getType());
+    }
 
     private String setNumber(String number) {
         if (number.length() == 19) {
@@ -71,7 +77,7 @@ public class Standard {
 
     public String setSurname(String surname) {
         this.surname = surname;
-        return  surname;
+        return surname;
     }
 
     public int setExpirationYear(int expirationYear) {
@@ -145,4 +151,5 @@ public class Standard {
         return sum;
     }
 }
+
 
