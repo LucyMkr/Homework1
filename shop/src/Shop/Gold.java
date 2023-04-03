@@ -1,3 +1,4 @@
+package Shop;
 public class Gold extends Cards {
     private int lunchSum;
     private int bonus;

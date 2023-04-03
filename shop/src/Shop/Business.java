@@ -1,3 +1,4 @@
+package Shop;
 public class Business extends Cards {
     private boolean isNotDone = true;
 
