@@ -45,7 +45,8 @@ public abstract class Product {
 
     public static void purchase(Cards card) {
         if (card.getSum() >= price) {
-            allMoney += price;
+            int profit = price - costPrice;
+            allMoney += profit;
             card.sum -= price;
             System.out.println("Thank you for your recent purchase");
         } else {
